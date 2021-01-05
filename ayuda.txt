@@ -1,0 +1,71 @@
+1-. Crear entorno con conda
+conda create -n nombrentorno python=3.8
+
+2-.Crear requirements.txt dentro de carpeta del proyecto
+
+3-. instalar python y django según el requirements.txt dentro de carpeta del proyecto en cmd con conda activado
+django-admin startproject profiles_project .
+
+4-. crear carpeta de la aplicación en la raiz de la carpeta, no el proyecto en django
+python manage.py startapp nombreapp
+
+5-.Luego de crear la app, hay que adjuntarla dentro de settings.py dentro de installed_apps
+
+
+6-. Las tablas se hacen el models
+
+7-. Para migrar tablas del modelo, retornar a la raíz donde está manage.py y aplicar cmd dentro del anaconda
+(funcionó con el bash de git dentro de conda)
+
+python manage.py makemigrations nombreapp
+
+python manage.py migrate
+
+8-.correr server sin conda
+python manage.py runserver
+
+9-.Se necesita ingresar al http://127.0.0.1:8000/admin/login/?next=/admin/, así que se necesita hacer un superuser
+python manage.py createsuperuser
+
+10-.admin.py se registra el modelo y el register de usuarios.
+
+11-.En views.py se hace un método que retorna una vista, esta vista la consumo en urls,py, y el template
+se lo paso en settings.py en DIRS
+
+Explicación de urls.
+I-.Se crea folder template en raiz del pryecto con index.html.
+II-.En settings.py en DIRS, se pone la carpeta template que se creó, él la bsucará en todo el proyecto.
+III-.En view.py se redirecciona el index.html dentro de la carpeta template por medio de una función.
+IV-.Finálmente en urls se crea un path donde se pone redirección a la página de inicio, con su método y template.
+
+12-. Para traspasar datos entre la view.py (el cual se hizo un select), el index.html.
+
+13-. Se crea un forms.py dentro dentro de carpeta apps creada
+
+
+===============================
+
+
+VISTA BASADAS EN CLASES
+
+1-. Se crea un archivo dentro de la apps llamada class_view.py
+
+===============================
+
+index:
+http://127.0.0.1:8000/
+
+
+crear usuario
+http://127.0.0.1:8000/crear_persona/
+
+
+
+
+
+
+
+
+
+
+
